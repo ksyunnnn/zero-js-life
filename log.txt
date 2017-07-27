@@ -1,0 +1,29 @@
+yarn start v0.27.5
+$ gulp
+[07:41:35] Requiring external module babel-register
+[07:41:36] Using gulpfile ~/workspace/nodetest/gulpfile.babel.js
+[07:41:36] Starting 'watch'...
+[07:41:36] Finished 'watch' after 22 ms
+[07:41:36] Starting 'lint'...
+[07:41:36] Starting 'clean'...
+[07:41:36] Finished 'clean' after 22 ms
+[07:41:39] 
+/home/ubuntu/workspace/nodetest/src/dog.js
+  1:1  error  Definition for rule 'jsx-a11y/href-no-hash' was not found  jsx-a11y/href-no-hash
+
+/home/ubuntu/workspace/nodetest/src/index.js
+  2:1  error  Definition for rule 'jsx-a11y/href-no-hash' was not found  jsx-a11y/href-no-hash
+
+/home/ubuntu/workspace/nodetest/gulpfile.babel.js
+   2:1   error    Definition for rule 'jsx-a11y/href-no-hash' was not found  jsx-a11y/href-no-hash
+  21:35  error    Missing trailing comma                                     comma-dangle
+  29:35  error    Missing trailing comma                                     comma-dangle
+  34:5   warning  Unexpected console statement                               no-console
+
+✖ 6 problems (5 errors, 1 warning)
+  2 errors, 0 warnings potentially fixable with the `--fix` option.
+
+[07:41:39] 'lint' errored after 2.91 s
+[07:41:39] ESLintError in plugin 'gulp-eslint'
+Message:
+    Failed with 5 errors
