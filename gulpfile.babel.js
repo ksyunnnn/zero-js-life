@@ -29,7 +29,10 @@ gulp.task('lint', () =>
     .pipe(eslint.failAfterError()),
 );
 
-gulp.task('clean', () => del(paths.libDir));
+gulp.task('clean', () => del([
+  paths.libDir,
+  paths.clientBundle,
+]));
 
 gulp.task('build', ['lint', 'clean'], () =>
   gulp.src(paths.allSrcJs)
@@ -40,7 +43,7 @@ gulp.task('build', ['lint', 'clean'], () =>
 gulp.task('main', ['lint', 'clean'], () =>
   gulp.src(paths.clientEntryPoint)
     .pipe(webpack(webpackConfig))
-    .pipe(gulp.dest(paths.distDir))
+    .pipe(gulp.dest(paths.distDir)),
 );
 
 gulp.task('watch', () => {
