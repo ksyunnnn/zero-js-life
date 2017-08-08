@@ -37,12 +37,11 @@ gulp.task('build', ['lint', 'clean'], () =>
     .pipe(gulp.dest(paths.libDir)),
 );
 
-gulp.task('main', ['build'], (callback) => {
-  exec(`node ${paths.libDir}`, (error, stdout) => {
-    console.log(stdout);
-    return callback(error);
-  });
-});
+gulp.task('main', ['lint', 'clean'], () =>
+  gulp.src(paths.clientEntryPoint)
+    .pipe(webpack(webpackConfig))
+    .pipe(gulp.dest(paths.distDir))
+);
 
 gulp.task('watch', () => {
   gulp.watch(paths.allSrcJs, ['main']);
